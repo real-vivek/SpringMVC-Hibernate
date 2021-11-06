@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>LibraryManagementSystem</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<absolute-ordering />
+
+	<!-- Configuring dispatcher servlet -->
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+
+		<!-- load-on-startup will load our dispatcher servlet when server is server -->
+		<!-- If given -ve value then servlet will be loaded at request time(first 
+			request) -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Setting up URL mapping for Spring MVC Dispatcher Servlet -->
+	<!-- The servlet name in servlet mapping should be same as servlet name 
+		in servlet tag -->
+	<!-- All the web request coming to our app will be directed to dispatcher 
+		servlet as url-pattern is / -->
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+
+
+</web-app>
